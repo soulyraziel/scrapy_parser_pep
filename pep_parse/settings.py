@@ -1,12 +1,17 @@
+from pathlib import Path
+
+
 BOT_NAME = 'pep_parse'
-
-SPIDER_MODULES = ['pep_parse.spiders']
-NEWSPIDER_MODULE = 'pep_parse.spiders'
-
+NEWSPIDER_MODULE = BOT_NAME + '.spiders'
+SPIDER_MODULES = [NEWSPIDER_MODULE]
 ROBOTSTXT_OBEY = True
+BASE_DIR = Path(__file__).parent.parent
+RESULTS_DIR_NAME = 'results'
+RESULTS_DIR = BASE_DIR / RESULTS_DIR_NAME
+DATETIME_FORMAT = '%Y-%m-%d_%H-%M-%S'
 
 FEEDS = {
-    'results/pep_%(time)s.csv': {
+    RESULTS_DIR_NAME + '/pep_%(time)s.csv': {
         'format': 'csv',
         'fields': ['number', 'name', 'status'],
         'overwrite': True
