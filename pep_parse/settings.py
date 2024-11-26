@@ -6,7 +6,6 @@ NEWSPIDER_MODULE = BOT_NAME + '.spiders'
 SPIDER_MODULES = [NEWSPIDER_MODULE]
 ROBOTSTXT_OBEY = True
 PEPS_DOMAIN = 'peps.python.org'
-PEPS_URL = f'https://{PEPS_DOMAIN}/'
 BASE_DIR = Path(__file__).parent.parent
 RESULTS_DIR_NAME = 'results'
 RESULTS_DIR = BASE_DIR / RESULTS_DIR_NAME
